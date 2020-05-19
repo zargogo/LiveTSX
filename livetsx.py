@@ -19,7 +19,7 @@ sg.theme('DarkAmber')
 def StockInfo(line_num):
     return [sg.Input(key=f"i{line_num}", font=('Helvetica', 20), size=(10, 0)), sg.Text("0.00", size=(6, 0), font=('Helvetica', 20), key=f"o{line_num}")]
 
-window = sg.Window("TSX Stocks", [StockInfo(i) for i in range(0, stock_amount)])
+window = sg.Window("TSX Stocks", [StockInfo(i) for i in range(0, stock_amount)], grab_anywhere=True)
 
 while True:                              # Event Loop
     event, values = window.read(timeout=100)
